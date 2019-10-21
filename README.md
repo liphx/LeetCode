@@ -6,7 +6,7 @@ LeetCode题库C++解题代码
 
 所有代码均accepted
 
-题目描述可在LeetCode网站获取
+题目完整描述可在LeetCode网站获取
 
 <https://leetcode.com>
 
