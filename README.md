@@ -15,7 +15,3 @@ LeetCode题库C++解题代码
 ## 个人主页
 
 <http://liph.ink>
-
-## 我的组织
-
-<http://BladeAlien.cn>
