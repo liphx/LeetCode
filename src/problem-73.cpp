@@ -13,28 +13,29 @@ public:
         if (m == 0)
             return;
         int n = matrix[0].size();
-        // O(m + n), 记录哪些行和列需要置0
-        // O(1)
+        // 空间O(m + n), 记录哪些行和列需要置0
+        // 空间O(1)
+        int flag = INT_MIN + 1;
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 if (matrix[i][j] == 0) {
-                    // 同行同列置0
+                    // 同行同列置特殊值, bug:输入中含有特殊值
                     for (int k1 = 0; k1 < n; k1++) {
-                        matrix[i][k1] = (matrix[i][k1] != 0) ? INT_MAX : 0; // 如果是0，不修改
+                        matrix[i][k1] = (matrix[i][k1] != 0) ? flag : 0; // 如果是0，不修改
                     }
                     for (int k2 = 0; k2 < m; k2++) {
-                        matrix[k2][j] = (matrix[k2][j] != 0) ? INT_MAX : 0;
+                        matrix[k2][j] = (matrix[k2][j] != 0) ? flag : 0;
                     }
                 }
             }
         }
+        // 特殊值置0
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                if (matrix[i][j] == INT_MAX)
+                if (matrix[i][j] == flag)
                     matrix[i][j] = 0;
             }
         }
-        
     }
 };
 
