@@ -22,9 +22,7 @@ public:
         ListNode *pre = &ret;
         // 每次读取两个节点
         while (head != nullptr && head->next != nullptr) {
-            //cout << "---" << head->val << endl;
             ListNode *tmp1 = new ListNode(head->next->val);
-            //cout << tmp1->val << endl;
             ListNode *tmp2 = new ListNode(head->val);
             ListNode *tmp = head;
             tmp1->next = tmp2;
