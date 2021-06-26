@@ -9,19 +9,16 @@ using namespace std;
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
-        unordered_map<int, int> re;
+        unordered_map<int, int> data;
         int n = nums.size();
-        vector<int> ret;
         for(int i = 0; i < n; ++i){
             int t = target - nums[i];
-            if(re.find(t) != re.end()){
-                ret.emplace_back(re[t]);
-                ret.emplace_back(i);
-                break;
+            if(data.find(t) != data.end()){
+                return vector<int> {data[t], i};
             }
-            re[nums[i]] = i;
+            data[nums[i]] = i;
         }
-        return ret;       
+        return vector<int>();
     }
 };
 
