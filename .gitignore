@@ -1,0 +1,13 @@
+# c/cpp
+*.o
+a.out
+*.exe
+
+# java
+*.class
+
+# vim
+*.swp
+Session.vim
+
+.vscode/
