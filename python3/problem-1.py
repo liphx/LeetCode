@@ -4,7 +4,7 @@ class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         data = dict()
         for i, v in enumerate(nums):
-            if data.get(target - v) is not None:
+            if target - v in data:
                 return [data[target - v], i]
             data[v] = i
 
