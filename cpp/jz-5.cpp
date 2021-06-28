@@ -22,7 +22,7 @@ public:
 class Solution2 {
 public:
     string replaceSpace(string s) {
-        auto pos = s.find(" ");
+        auto pos = s.find(' ');
         while (pos != string::npos) {
             s.replace(pos, 1, "%20");
             pos = s.find(" ", pos);
