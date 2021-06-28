@@ -18,8 +18,11 @@ public:
         }
         return -1;
     }
+};
 
-    int findRepeatNumber2(vector<int>& nums) {
+class Solution2 {
+public:
+    int findRepeatNumber(vector<int>& nums) {
         for (int i = 0; i < nums.size(); i++) {
             while (nums[i] != i) {
                 if (nums[i] == nums[nums[i]])
@@ -35,5 +38,5 @@ int main()
 {
     vector<int> nums {2, 3, 1, 0, 2, 5, 3};
     cout << Solution().findRepeatNumber(nums) << endl;
-    cout << Solution().findRepeatNumber2(nums) << endl;
+    cout << Solution2().findRepeatNumber(nums) << endl;
 }
