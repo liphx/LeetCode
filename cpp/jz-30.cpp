@@ -8,23 +8,29 @@ using namespace std;
 
 class MinStack {
 public:
-    MinStack() {
-    }
+    stack<int> s1, s2;
+
+    MinStack() {}
     
     void push(int x) {
-        
+        s1.push(x);
+        if (s2.empty() || x <= s2.top())
+            s2.push(x);
     }
     
     void pop() {
-
+        int x = s1.top();
+        s1.pop();
+        if (s2.top() == x)
+            s2.pop();
     }
     
     int top() {
-
+        return s1.top();
     }
     
     int min() {
-
+        return s2.top();
     }
 };
 
@@ -34,7 +40,7 @@ int main()
     minStack.push(-2);
     minStack.push(0);
     minStack.push(-3);
-    cout << minStack.min() << endl; // -3.
+    cout << minStack.min() << endl; // -3
     minStack.pop();
     cout << minStack.top() << endl; // 0
     cout << minStack.min() << endl; // -2
